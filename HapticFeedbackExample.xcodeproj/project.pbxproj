@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A644A4C217E112C006CD28B /* HapticProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A644A4B217E112C006CD28B /* HapticProvider.swift */; };
 		7AEF8C8D217DD88D00D634B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEF8C8C217DD88D00D634B1 /* AppDelegate.swift */; };
 		7AEF8C8F217DD88D00D634B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEF8C8E217DD88D00D634B1 /* ViewController.swift */; };
 		7AEF8C92217DD88D00D634B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AEF8C90217DD88D00D634B1 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A644A4B217E112C006CD28B /* HapticProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticProvider.swift; sourceTree = "<group>"; };
 		7AEF8C89217DD88D00D634B1 /* HapticFeedbackExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HapticFeedbackExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AEF8C8C217DD88D00D634B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AEF8C8E217DD88D00D634B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				7AEF8C8C217DD88D00D634B1 /* AppDelegate.swift */,
 				7AEF8C8E217DD88D00D634B1 /* ViewController.swift */,
+				7A644A4B217E112C006CD28B /* HapticProvider.swift */,
 				7AEF8CA0217DDCBE00D634B1 /* Structs.swift */,
 				7AEF8C90217DD88D00D634B1 /* Main.storyboard */,
 				7AEF8C93217DD88F00D634B1 /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 				7AEF8CA1217DDCBE00D634B1 /* Structs.swift in Sources */,
 				7AEF8C8F217DD88D00D634B1 /* ViewController.swift in Sources */,
 				7AEF8C8D217DD88D00D634B1 /* AppDelegate.swift in Sources */,
+				7A644A4C217E112C006CD28B /* HapticProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,19 @@ protocol HapticStruct {
     var sectionTitle: String { get }
     var numberOfCells: Int { get }
     var cellTitles: [String] { get }
+    func title(for index: Int) -> String?
     func action(for index: Int)
+}
+
+extension HapticStruct {
+    
+    func title(for index: Int) -> String? {
+        
+        guard cellTitles.indices.contains(index) else {
+            return nil
+        }
+        return cellTitles[index]
+    }
 }
 
 struct UIImpactFeedbackGeneratorStruct: HapticStruct {

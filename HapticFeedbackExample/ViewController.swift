@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UITableViewController {
     
-    let hapticStructs: [HapticStruct] = [UIImpactFeedbackGeneratorStruct(), UINotificationFeedbackGeneratorStruct(), UISelectionFeedbackGeneratorStruct()]
+    let hapticProvider = HapticProvider()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,36 +22,35 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard hapticStructs.indices.contains(section) else {
+        guard let hapticStruct = hapticProvider.hapticStruct(at: section) else {
             return nil
         }
-        return hapticStructs[section].sectionTitle
+        return hapticStruct.sectionTitle
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard hapticStructs.indices.contains(section) else {
+        guard let hapticStruct = hapticProvider.hapticStruct(at: section) else {
             return 0
         }
-        return hapticStructs[section].numberOfCells
+        return hapticStruct.numberOfCells
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        guard hapticStructs.indices.contains(indexPath.section),
-            hapticStructs[indexPath.section].cellTitles.indices.contains(indexPath.row) else {
+        guard let hapticStruct = hapticProvider.hapticStruct(at: indexPath.section) else {
             return cell
         }
-        cell.textLabel?.text = hapticStructs[indexPath.section].cellTitles[indexPath.row]
+        cell.textLabel?.text = hapticStruct.title(for: indexPath.row)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard hapticStructs.indices.contains(indexPath.section) else {
+        guard let hapticStruct = hapticProvider.hapticStruct(at: indexPath.section) else {
             return
         }
-        hapticStructs[indexPath.section].action(for: indexPath.row)
+        hapticStruct.action(for: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
