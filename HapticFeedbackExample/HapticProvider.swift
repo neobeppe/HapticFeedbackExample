@@ -23,5 +23,9 @@ struct HapticProvider {
             return nil
         }
         return hapticStructs[index]
-    }    
+    }
+    
+    var numberOfStructs: Int {
+        return hapticStructs.count
+    }
 }
